@@ -1,3 +1,4 @@
+// DS1307 RTC I2C implementation for Firmware Contest
 #include <Arduino.h>
 #include <Wire.h>
 
