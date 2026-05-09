@@ -63,6 +63,7 @@ jobs:
           wokwi-cli --timeout 30000 --serial-log-file serial.log .
 
       - name: Verify output
+        if: always()
         run: |
           echo "=== Serial Output ==="
           cat serial.log
@@ -107,6 +108,7 @@ jobs:
           wokwi-cli --timeout 30000 --serial-log-file serial.log .
 
       - name: Verify output
+        if: always()
         run: |
           echo "=== Serial Output ==="
           cat serial.log
@@ -155,6 +157,7 @@ jobs:
           wokwi-cli --timeout 30000 --serial-log-file serial.log .
 
       - name: Verify output
+        if: always()
         run: |
           echo "=== Serial Output ==="
           cat serial.log
