@@ -27,7 +27,8 @@ static I2CStatus readDS1307(uint16_t &year, uint8_t &month, uint8_t &day,
     if (err != 0)             return I2C_ERR_OTHER;
 
     uint8_t n = Wire.requestFrom(DS1307_ADDR, 7);
-    if (n < 7) return I2C_ERR_SHORT_READ;
+    if (n == 0) return I2C_ERR_NACK;
+    if (n < 7)  return I2C_ERR_SHORT_READ;
 
     sec   = bcdToDec(Wire.read() & 0x7F);  // 0x00 seconds
     min   = bcdToDec(Wire.read());          // 0x01 minutes
